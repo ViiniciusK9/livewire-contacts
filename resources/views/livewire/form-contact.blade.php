@@ -1,4 +1,4 @@
-<div>
+<div class="card p-5">
     <form wire:submit="newContact">
 
         <div class="mb-3">

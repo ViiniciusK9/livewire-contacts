@@ -40,6 +40,7 @@ class FormContact extends Component
 
             $this->success = "Contact created successfully";
 
+            $this->dispatch('contactAdded');
             return;
         }
 
