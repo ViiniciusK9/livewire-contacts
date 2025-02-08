@@ -16,8 +16,8 @@
             <input type="text" class="form-control" id="phone">
         </div>
         
-        <div class="text-env">
-            <button class="btn btn-sencondary px-5">Save</button>
+        <div class="text-end">
+            <button class="btn btn-secondary px-5">Save</button>
         </div>
         
     </form>
