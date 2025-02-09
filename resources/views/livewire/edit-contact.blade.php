@@ -33,9 +33,9 @@
                         @enderror
                     </div>
 
-                    <div class="text-end">
-                        <a href="{{ route('home') }}" class="btn btn-secondary px-5">Cancel</a>
-                        <button class="btn btn-secondary px-5">Update</button>
+                    <div class="text-end d-flex justify-content-between">
+                        <a href="{{ route('home') }}" class="btn btn-danger px-5">Cancel</a>
+                        <button class="btn btn-info px-5">Update</button>
                     </div>
 
                 </form>

@@ -1,5 +1,18 @@
 <div class="card p-5">
-    <p class="mb-3">Contacts</p>
+
+    <div class="d-flex justify-content-between mb-3">
+        <div>
+            <h3 class="mb-3">Contacts</h3>            
+        </div>
+
+        <div>
+            <div class="d-flex gap-2 align-items-center">
+                <span>Search:</span>
+                <input type="text" wire:model.live="search" class="form-control form-control-sm">
+            </div>
+        </div>
+    </div>
+
 
     @if ($contacts->count() === 0)
 
@@ -18,5 +31,10 @@
                 </div>
             </div>
         @endforeach
+       
+        <div class="mt-3">
+            {{ $contacts->links() }}
+        </div>
+        
     @endif
 </div>
