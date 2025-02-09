@@ -1,7 +1,6 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-4">
-            
             <div class="card p-5">
                 <h3>Edit Contact</h3>
     
@@ -43,9 +42,7 @@
                 @if (session()->has('error'))
                     <div class="alert alert-danger text-center mt-3">{{ session('error') }}</div>
                 @endif
-
             </div>
-
         </div>
     </div>
 </div>

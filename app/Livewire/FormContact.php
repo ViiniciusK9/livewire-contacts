@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use App\Models\Contact;
-use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
@@ -17,9 +16,6 @@ class FormContact extends Component
     
     #[Validate('required|min:5|max:20')]
     public $phone;
-
-    public $error = "";
-    public $success = "";
 
     public function newContact()
     {
@@ -37,14 +33,25 @@ class FormContact extends Component
 
         if ($result->wasRecentlyCreated) {
             $this->reset();
-
-            $this->success = "Contact created successfully";
-
             $this->dispatch('contactAdded');
+
+            // success notification
+            $this->dispatch(
+                'notification',
+                type: 'success',
+                title: 'Contact created successfully.',
+                position: 'center'
+            );
             return;
         }
 
-        $this->error = "The contact already exists.";
+        // error notification
+        $this->dispatch(
+            'notification',
+            type: 'error',
+            title: 'The contact already exists.',
+            position: 'center'
+        );
     }
 
     public function render()

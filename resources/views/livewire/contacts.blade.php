@@ -13,9 +13,7 @@
         </div>
     </div>
 
-
     @if ($contacts->count() === 0)
-
         <div class="opacity-50">No contacts found</div>
     @else
         @foreach ($contacts as $contact)
@@ -35,6 +33,5 @@
         <div class="mt-3">
             {{ $contacts->links() }}
         </div>
-        
     @endif
 </div>

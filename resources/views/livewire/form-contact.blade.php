@@ -34,24 +34,19 @@
             <button class="btn btn-secondary px-5">Save</button>
         </div>
         
-        @if ($error)
-            <div class="alert alert-danger text-center mt-3"
-                x-data="{ show: true }"
-                x-show="show"
-                x-init="setTimeout(() => show = false, 2000)"
-            >
-                {{ $error }}
-            </div>
-        @endif
-
-        @if ($success)
-            <div class="alert alert-success text-center mt-3"
-                x-data="{ show: true }"
-                x-show="show"
-                x-init="setTimeout(() => show = false, 2000)"
-            >
-                {{ $success }}
-            </div>
-        @endif
     </form>
+
+    <script>
+        window.addEventListener('notification', (event) => {
+            const data = event.detail;
+
+            Swal.fire({
+                title: data.title,
+                icon: data.type,
+                position: data.position,
+                showConfirmButton: true,
+                timer: 2000,
+            });
+        });
+    </script>
 </div>
